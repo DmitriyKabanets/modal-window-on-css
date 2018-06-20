@@ -12,19 +12,22 @@ label {
 .modal_window_overlay {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
-    background: rgba(0,0,0, 0.5);
+    left: -9999px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity .5s;
 }
+
  .modal_window_controller {
      background: #fff;
      border-radius: 15px;
      padding: 10px;
      position: relative;
+     
  }
 
  .popup_slass {
@@ -32,3 +35,28 @@ label {
      top: 10px;
      right: 10px;
  }
+
+ .close_window {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: rgba(0,0,0, 0.5);
+
+ }
+
+ #modal_controller {
+     display: none;
+
+ }
+
+ #modal_controller:checked ~ .modal_window_overlay {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+ }
+
+
+
